@@ -1,0 +1,69 @@
+﻿@model projet.Models.Addresse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Addresse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroRue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroRue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ville)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ville)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodePostal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodePostal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dd>
+            Structures
+        </dd>
+        <ul>
+            @foreach (var item in ViewBag.Structures)
+            {
+                <li>
+                    @item.RaisonSocial
+                </li>
+            }
+        </ul>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

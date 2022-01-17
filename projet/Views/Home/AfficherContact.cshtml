@@ -1,0 +1,23 @@
+﻿
+@model List<projet.Models.Contact>
+
+
+@{
+    ViewBag.Title = "AfficherContact";
+}
+
+
+<h2>
+    @foreach (var item in Model)
+    {
+        <li>@item.ContactId</li>
+        <li>@item.Prenom</li>
+        <li>@item.Nom</li>
+    }
+</h2>
+
+
+
+}
+
+

@@ -1,0 +1,40 @@
+﻿@model List<projet.Models.Contact>
+
+@{
+    ViewBag.Title = "GetAllContact";
+}
+@*@{
+    var data = ViewData["Message"] as List<projet.Models.Contact>;
+}*@
+
+
+<h2>GetAllContact</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Update", new { id = item.ContactId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ContactId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ContactId })
+            </td>
+        </tr>
+    }
+
+</table>

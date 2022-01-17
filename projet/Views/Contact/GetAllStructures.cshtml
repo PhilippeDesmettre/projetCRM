@@ -1,0 +1,34 @@
+﻿@model List<projet.Models.Structure>
+
+@{
+    ViewBag.Title = "GetAllStructures";
+}
+
+<h2>GetAllStructures</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StructureId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RaisonSocial)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "UpdateStructure", new { id = item.StructureId }) |
+                @Html.ActionLink("Details", "DetailsStruct", new { id = item.StructureId }) |
+                @Html.ActionLink("Delete", "DeleteStruct", new { id = item.StructureId })
+            </td>
+        </tr>
+    }
+
+</table>
